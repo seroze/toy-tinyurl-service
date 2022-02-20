@@ -1,0 +1,16 @@
+
+create database toy_tinyurl_service;
+
+create table mappings (
+    shorturl VARCHAR(50) NOT NULL,
+
+    longurl VARCHAR(200) NOT NULL,
+
+    createdat TIMESTAMP NOT NULL
+);
+
+insert into  mappings(shorturl, longurl, createdat) values('www.asA42.com', 'https://www.postgresqltutorial.com/postgresql-insert/', now());
+
+select * from mappings where shorturl = 'www.asA42.com' ;
+
+ grant all privileges on table mappings to dummy;
